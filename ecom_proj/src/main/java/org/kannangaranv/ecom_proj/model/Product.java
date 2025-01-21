@@ -57,7 +57,17 @@ public class Product {
         this.imageDate = imageDate;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
 
+    public String getImageType() {
+        return imageType;
+    }
+
+    public byte[] getImageDate() {
+        return imageDate;
+    }
 
 
 }
