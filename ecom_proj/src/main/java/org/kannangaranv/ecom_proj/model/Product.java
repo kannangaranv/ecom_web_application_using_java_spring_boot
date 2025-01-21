@@ -1,5 +1,6 @@
 package org.kannangaranv.ecom_proj.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +34,7 @@ public class Product {
     @JsonProperty
     private String category;
     @JsonProperty
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private Date releaseDate;
     @JsonProperty
     private boolean available;
