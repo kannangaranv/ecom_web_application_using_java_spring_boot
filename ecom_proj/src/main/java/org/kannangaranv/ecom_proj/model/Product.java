@@ -2,10 +2,7 @@ package org.kannangaranv.ecom_proj.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,20 +23,41 @@ public class Product {
     @JsonProperty
     private String name;
     @JsonProperty
-    private String desc;
+    private String description;
     @JsonProperty
-    private String band;
+    private String brand;
     @JsonProperty
     private BigDecimal price;
     @JsonProperty
     private String category;
     @JsonProperty
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private Date releaseDate;
     @JsonProperty
-    private boolean available;
+    private boolean productAvailable;
     @JsonProperty
-    private int quantity;
+    private int stockQuantity;
+
+    @JsonProperty
+    private String imageName;
+    @JsonProperty
+    private String imageType;
+
+    @JsonProperty
+    @Lob
+    private byte[] imageDate;
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
+
+    public void setImageDate(byte[] imageDate) {
+        this.imageDate = imageDate;
+    }
+
+
 
 
 }
