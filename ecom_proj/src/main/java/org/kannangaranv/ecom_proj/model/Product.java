@@ -1,6 +1,9 @@
 package org.kannangaranv.ecom_proj.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,14 +19,24 @@ import java.util.Date;
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty
     private int id;
+    @JsonProperty
     private String name;
+    @JsonProperty
     private String desc;
+    @JsonProperty
     private String band;
+    @JsonProperty
     private BigDecimal price;
+    @JsonProperty
     private String category;
+    @JsonProperty
     private Date releaseDate;
+    @JsonProperty
     private boolean available;
+    @JsonProperty
     private int quantity;
 
 
